@@ -1,0 +1,73 @@
+*REPLACE XXX WITH THE LAST 3 CHARACTERS OF YOUR USER ID
+*ONLY THE MENU MAP SHOULD HAVE A SUFFIX OF 0
+* ALL OTHERS WILL NEED TO BE DISTINCT
+DCI8DMR  DFHMSD TYPE=&SYSPARM,MODE=INOUT,TERM=ALL,                     *
+               LANG=COBOL,TIOAPFX=YES,CTRL=FREEKB,                     *
+               MAPATTS=(COLOR,HILIGHT),DSATTS=(COLOR,HILIGHT)
+MAP1     DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+         DFHMDF POS=(3,1),LENGTH=4,                                    *
+               INITIAL='Amar',                                         *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+         DFHMDF POS=(4,1),LENGTH=7,                                    *
+               INITIAL='Al-Adil',                                      *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+
+         DFHMDF POS=(3,16),LENGTH=48,                                  *
+               INITIAL='A C C O U N T  I N Q U I R Y    S C R E E N',  *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+         DFHMDF POS=(4,16),LENGTH=48,                                  *
+               INITIAL='=========================================== ', *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+
+         DFHMDF POS=(6,21),LENGTH=13,INITIAL='ACCT. NUMBER:',          *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+ACCTNO   DFHMDF POS=(6,36),LENGTH=5,                                   *
+               ATTRB=(UNPROT,IC,FSET),HILIGHT=UNDERLINE,COLOR=NEUTRAL
+         DFHMDF POS=(6,42),LENGTH=0,ATTRB=(ASKIP,NORM)
+
+         DFHMDF POS=(8,28),LENGTH=6,INITIAL='TITLE:',                  *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+TITL     DFHMDF POS=(8,36),LENGTH=4,HILIGHT=UNDERLINE,                 *
+               ATTRB=(ASKIP,NORM,FSET)
+         DFHMDF POS=(8,41),LENGTH=0,ATTRB=(ASKIP,NORM)
+
+         DFHMDF POS=(10,23),LENGTH=11,INITIAL='FIRST NAME:',           *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+FNAME    DFHMDF POS=(10,36),LENGTH=15,HILIGHT=UNDERLINE,               *
+               ATTRB=(ASKIP,NORM,FSET)
+         DFHMDF POS=(10,52),LENGTH=0,ATTRB=(ASKIP,NORM)
+
+         DFHMDF POS=(11,26),LENGTH=8,INITIAL='SURNAME:',               *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+SNAME    DFHMDF POS=(11,36),LENGTH=15,HILIGHT=UNDERLINE,               *
+               ATTRB=(ASKIP,NORM,FSET)
+         DFHMDF POS=(11,52),LENGTH=0,ATTRB=(ASKIP,NORM)
+
+         DFHMDF POS=(13,26),LENGTH=8,INITIAL='ADDRESS:',               *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+ADDR1    DFHMDF POS=(13,36),LENGTH=20,HILIGHT=UNDERLINE,               *
+               ATTRB=(ASKIP,NORM,FSET)
+         DFHMDF POS=(13,57),LENGTH=0,ATTRB=(ASKIP,NORM)
+ADDR2    DFHMDF POS=(14,36),LENGTH=20,HILIGHT=UNDERLINE,               *
+               ATTRB=(ASKIP,NORM,FSET)
+         DFHMDF POS=(14,57),LENGTH=0,ATTRB=(ASKIP,NORM)
+
+         DFHMDF POS=(16,27),LENGTH=7,INITIAL='STATUS:',                *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+STAT     DFHMDF POS=(16,36),LENGTH=1,HILIGHT=UNDERLINE,                *
+               ATTRB=(ASKIP,NORM,FSET)
+         DFHMDF POS=(16,38),LENGTH=0,ATTRB=(ASKIP,NORM)
+
+         DFHMDF POS=(17,28),LENGTH=6,INITIAL='LIMIT:',                 *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+CRLIMIT  DFHMDF POS=(17,36),LENGTH=8,HILIGHT=UNDERLINE,                *
+               ATTRB=(NUM,ASKIP,NORM,FSET)
+         DFHMDF POS=(17,45),LENGTH=0,ATTRB=(ASKIP,NORM)
+
+MSG      DFHMDF POS=(20,12),LENGTH=60,ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(22,20),LENGTH=40,                                 *
+               INITIAL=' F4-RESET MENU               F9-EXIT',         *
+               ATTRB=(ASKIP,NORM)
+
+DCI8DMR  DFHMSD TYPE=FINAL
+                 END

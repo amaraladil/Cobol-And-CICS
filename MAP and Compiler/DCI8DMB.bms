@@ -1,0 +1,45 @@
+*REPLACE XXX WITH THE LAST 3 CHARACTERS OF YOUR USER ID
+*ONLY THE MENU MAP SHOULD HAVE A SUFFIX OF 0
+* ALL OTHERS WILL NEED TO BE DISTINCT
+DCI8DMB  DFHMSD TYPE=&SYSPARM,MODE=INOUT,TERM=ALL,                     *
+               LANG=COBOL,TIOAPFX=YES,CTRL=FREEKB,                     *
+               MAPATTS=(COLOR,HILIGHT),DSATTS=(COLOR,HILIGHT)
+MAP1     DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+         DFHMDF POS=(2,1),LENGTH=4,                                    *
+               INITIAL='Amar',                                         *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+         DFHMDF POS=(3,1),LENGTH=7,                                    *
+               INITIAL='Al-Adil',                                      *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+
+         DFHMDF POS=(2,16),LENGTH=48,                                  *
+               INITIAL='S E A R C H   B Y   A C C T   S U R N A M E',  *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+         DFHMDF POS=(3,16),LENGTH=48,                                  *
+               INITIAL='=========================================== ', *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+
+         DFHMDF POS=(5,18),LENGTH=21,INITIAL='SURNAME TO SEARCH BY:',  *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+SCHNAME  DFHMDF POS=(5,42),LENGTH=15,                                  *
+               ATTRB=(UNPROT,IC,FSET),HILIGHT=UNDERLINE,COLOR=NEUTRAL
+         DFHMDF POS=(5,58),LENGTH=0,ATTRB=(ASKIP,NORM)
+
+         DFHMDF POS=(7,15),LENGTH=48,                                  *
+               INITIAL='ACCOUNT #        FIRST NAME         SURNAME ', *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=NEUTRAL
+         DFHMDF POS=(8,15),LENGTH=48,                                  *
+               INITIAL='---------       ------------        ------- ', *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=NEUTRAL
+
+LINE     DFHMDF POS=(9,1),LENGTH=79,ATTRB=(ASKIP,FSET),OCCURS=10
+
+MSG      DFHMDF POS=(20,12),LENGTH=60,ATTRB=(ASKIP,NORM)
+
+         DFHMDF POS=(22,15),LENGTH=60,                                 *
+               INITIAL='F2-RESET   F7-PREV SCROLL   F8-NEXT SCROLL   F9*
+               -EXIT',                                                 *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=NEUTRAL
+
+DCI8DMB  DFHMSD TYPE=FINAL
+                 END

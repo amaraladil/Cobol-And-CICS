@@ -1,0 +1,41 @@
+*REPLACE XXX WITH THE LAST 3 CHARACTERS OF YOUR USER ID
+*ONLY THE MENU MAP SHOULD HAVE A SUFFIX OF 0
+* ALL OTHERS WILL NEED TO BE DISTINCT
+DCI8DMM  DFHMSD TYPE=&SYSPARM,MODE=INOUT,TERM=ALL,                     *
+               LANG=COBOL,TIOAPFX=YES,CTRL=FREEKB,                     *
+               MAPATTS=(COLOR,HILIGHT),DSATTS=(COLOR,HILIGHT)
+MENU     DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+         DFHMDF POS=(4,16),LENGTH=48,                                  *
+               INITIAL='C R E D I T   A C C O U N T   M A I N    M E N *
+               U',                                                     *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+         DFHMDF POS=(5,34),LENGTH=48,INITIAL='==================',     *
+               ATTRB=(ASKIP,NORM),COLOR=NEUTRAL
+         DFHMDF POS=(8,25),LENGTH=30,                                  *
+               INITIAL='CHOICE 1 - ENTER A NEW ACCOUNT',               *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+         DFHMDF POS=(10,22),LENGTH=36,                                 *
+               INITIAL='CHOICE 2 - INQUIRE BY ACCOUNT NUMBER',         *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+         DFHMDF POS=(12,22),LENGTH=44,                                 *
+               INITIAL='CHOICE 3 - CHANGE EXISTING ACCOUNT',           *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+         DFHMDF POS=(14,22),LENGTH=40,                                 *
+               INITIAL='CHOICE 4 - SEARCH BY ACCOUNT HOLDER NAME',     *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+         DFHMDF POS=(16,24),LENGTH=27,                                 *
+               INITIAL='CHOICE 9 - EXIT THIS SCREEN',                  *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+         DFHMDF POS=(18,19),LENGTH=25,                                 *
+               INITIAL='ENTER YOUR CHOICE HERE  :',                    *
+               ATTRB=(ASKIP,NORM),HILIGHT=OFF,COLOR=BLUE
+CHOICE   DFHMDF POS=(18,46),LENGTH=1,                                  *
+               ATTRB=(UNPROT,IC),HILIGHT=UNDERLINE,COLOR=NEUTRAL
+         DFHMDF POS=(18,48),LENGTH=0,ATTRB=(ASKIP,NORM)
+
+MSG      DFHMDF POS=(20,20),LENGTH=40,ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(22,20),LENGTH=43,                                 *
+               INITIAL='F1-NEW ACCOUNT F2-INQUIRY F3-CHANGE F9-EXIT',  *
+               ATTRB=(ASKIP,NORM)
+DCI8DMM  DFHMSD TYPE=FINAL
+                 END
